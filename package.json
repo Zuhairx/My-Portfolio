@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://Zuhairx.github.io/My-Portfolio",
+  "homepage": "https://zuhairx.github.io/My-Portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

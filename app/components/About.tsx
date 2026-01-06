@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { ImageWithFallback } from './image/ImageWithFallback';
+import profileImg from '../components/image/foto.JPEG'
 
 export function About() {
   const ref = useRef(null);
@@ -159,7 +160,7 @@ export function About() {
                   transition={{ duration: 0.3 }}
                 >
                   <ImageWithFallback
-                    src="app/components/image/foto.JPEG"
+                    src={profileImg}
                     alt="me"
                     className="w-full h-auto rounded-xl sm:rounded-2xl"
                   />
