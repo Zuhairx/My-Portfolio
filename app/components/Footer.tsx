@@ -23,7 +23,7 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              {'<ZuuPortofolio />'}
+              {'<ZuuPortofolio/>'}
             </motion.div>
 
             <motion.div

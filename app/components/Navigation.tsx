@@ -15,7 +15,24 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+    setIsMobileMenuOpen(false); // Close mobile menu after clicking
+  };
+
+  const navItems = [
+    { name: 'Home', id: 'home' },
+    { name: 'About', id: 'about' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Projects', id: 'projects' },
+    { name: 'Contact', id: 'contact' },
+  ];
 
   return (
     <motion.nav
@@ -26,7 +43,7 @@ export function Navigation() {
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ delay: 1, duration: 2, type: "spring", bounce: 5}}
+      transition={{ delay: 1, duration: 2, type: "spring"}}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -46,19 +63,19 @@ export function Navigation() {
               bounce: 0.4
             }}
           >
-            {'<ZuuPortfolio />'}
+            {'<ZuuPortfolio/>'}
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
-              <motion.a
+              <motion.button
                 key={index}
-                href={`#${item.toLowerCase()}`}
+                onClick={() => scrollToSection(item.id)}
                 className={`relative ${
-                  isScrolled ? 'text-gray-700 ': 
+                  isScrolled ? 'text-gray-700 ':
                   'text-white'
-                } transition-all`}
+                } transition-all bg-transparent border-none`}
                 whileHover={{
                   scale: 1.1
                 }}
@@ -67,13 +84,13 @@ export function Navigation() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0 + index * 0.1 }}
               >
-                {item}
+                {item.name}
                 <motion.span
                   className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-500"
                   whileHover={{ width: '100%' }}
                   transition={{ duration: 0.3 }}
                 />
-              </motion.a>
+              </motion.button>
             ))}
           </div>
 
@@ -111,11 +128,10 @@ export function Navigation() {
       >
         <div className="px-4 py-4 space-y-4">
           {navItems.map((item, index) => (
-            <motion.a
+            <motion.button
               key={index}
-              href={`#${item.toLowerCase()}`}
-              className="block text-gray-700 transition-colors py-2 rounded-md pl-4"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => scrollToSection(item.id)}
+              className="block text-gray-700 transition-colors py-2 rounded-md pl-4 bg-transparent border-none text-left w-full"
               whileTap={{
                 background: "linear-gradient(to right, #06b6d4, #3b82f6)",
                 color: "#ffffff"
@@ -124,8 +140,8 @@ export function Navigation() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              {item}
-            </motion.a>
+              {item.name}
+            </motion.button>
           ))}
         </div>
       </motion.div>

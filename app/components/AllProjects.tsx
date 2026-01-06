@@ -3,7 +3,14 @@ import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 import { ExternalLink, Github, ArrowLeft } from 'lucide-react';
 import { ImageWithFallback } from './image/ImageWithFallback';
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { useNavigate } from 'react-router-dom';
+import img1 from '../components/image/p1.png'
+import img2 from '../components/image/p2.png'
+import img3 from '../components/image/p3.png'
+import img4 from '../components/image/p4.png'
+import img5 from '../components/image/p5.png'
+import img6 from '../components/image/p6.png'
 
 export function AllProjects() {
   const ref = useRef(null);
@@ -15,7 +22,7 @@ export function AllProjects() {
     {
       title: 'Pudding Data Management System',
       description: 'A Java Swing desktop application integrated with MySQL that allows users to manage menu data through a graphical interface, supporting full CRUD operations, input validation, and real-time database updates.',
-      image: './app/components/image/p1.png',
+      image: img1,
       tags: ['java Swing', 'CRUD', 'GUI', 'MySQL'],
       gradient: 'from-red-500 to-orange-500',
       githubHref: 'https://github.com/Zuhairx/Pudding-Menu-Management-System.git',
@@ -23,7 +30,7 @@ export function AllProjects() {
     {
       title: 'Book Store Transaction System',
       description: 'A Java console-based application designed to manage bookstore transactions. The system allows users to handle customer purchases, calculate total prices, generate transaction bills, process payments, and manage transaction history with insert and delete functionalities.',
-      image: './app/components/image/p2.png',
+      image: img2,
       tags: ['java', 'OOP', 'Console App'],
       gradient: 'from-red-500 to-orange-500',
       githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
@@ -31,7 +38,7 @@ export function AllProjects() {
     {
       title: 'Employee Data Management System',
       description: 'A Java Console-based application for managing company employee data, including CRUD (Create, Read, Update, Delete) features, input validation, job grouping, and automatic salary and bonus calculations based on the number of employees per position.',
-      image: './app/components/image/p3.png',
+      image: img3,
       tags: ['java', 'OOP', 'CRUD', 'Console App'],
       gradient: 'from-red-500 to-orange-500',
       githubHref: 'https://github.com/Zuhairx/Employee-Data-Management-System.git',
@@ -39,7 +46,7 @@ export function AllProjects() {
     {
       title: 'Achord.Fly',
       description: 'Comprehensive component library with documentation, accessibility features, and design tokens for enterprise use.',
-      image: './app/components/image/p4.png',
+      image: img4,
       tags: ['Figma', 'Prototyping', 'UI/UX'],
       gradient: 'from-violet-500 to-purple-500',
       externalHref: 'https://www.figma.com/proto/ENJQjkx7BlkfaBFj7VAMNh/Achordly?node-id=0-1&t=hRKBitLN24v3G3Qt-1'
@@ -47,7 +54,7 @@ export function AllProjects() {
     {
       title: 'Fityhealty',
       description: 'Intelligent project management tool with AI-powered task prioritization, team collaboration, and productivity analytics.',
-      image: './app/components/image/p5.png',
+      image: img5,
       tags: ['Figma', 'Prototyping', 'UI/UX'],
       gradient: 'from-violet-500 to-purple-500',
       externalHref: 'https://www.figma.com/proto/J6fWDnQzxzGs6ddHnTGStH/FityHealthy?node-id=0-1&t=jwpvVzm9W8tuorGc-1'
@@ -55,7 +62,7 @@ export function AllProjects() {
     {
       title: 'Joridz Fashion',
       description: 'Fashion design and branding project showcasing creative UI/UX concepts and modern design principles.',
-      image: './app/components/image/p6.png',
+      image: img6,
       tags: ['Figma', 'Prototyping', 'UI/UX'],
       gradient: 'from-violet-500 to-purple-500',
       externalHref: 'https://www.figma.com/proto/0AKUUrOc30rxBkeLJih4k3/Sketch-Jordiz-s-Fashion?node-id=0-1&t=roLDeWn3cU7xLmol-1'
@@ -131,36 +138,50 @@ export function AllProjects() {
                     {(project.githubHref || project.externalHref) && (
                       <div className={`absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent transition-opacity duration-300 flex items-end justify-center gap-4 pb-6 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`}>
                         {project.githubHref && (
-                          <motion.a
-                            href={project.githubHref}
-                            target='_blank'
-                            className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors"
-                            whileHover={{
-                              scale: 1.1, rotate: 5,
-                              backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
-                              color: "#ffffff",
-                              borderWidth: 0
-                            }}
-                            whileTap={{ scale: 0.9 }}
-                          >
-                            <Github className="w-5 h-5" />
-                          </motion.a>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <motion.a
+                                href={project.githubHref}
+                                target='_blank'
+                                className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors"
+                                whileHover={{
+                                  scale: 1.1, rotate: 5,
+                                  backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
+                                  color: "#ffffff",
+                                  borderWidth: 0
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                              >
+                                <Github className="w-5 h-5" />
+                              </motion.a>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>View Repository</p>
+                            </TooltipContent>
+                          </Tooltip>
                         )}
                         {project.externalHref && (
-                          <motion.a
-                            href={project.externalHref}
-                            target='_blank'
-                            className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors"
-                            whileHover={{
-                              scale: 1.1, rotate: 5,
-                              backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
-                              color: "#ffffff",
-                              borderWidth: 0
-                            }}
-                            whileTap={{ scale: 0.9 }}
-                          >
-                            <ExternalLink className="w-5 h-5" />
-                          </motion.a>
+                          <Tooltip>
+                            <TooltipTrigger asChild>
+                              <motion.a
+                                href={project.externalHref}
+                                target='_blank'
+                                className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors"
+                                whileHover={{
+                                  scale: 1.1, rotate: 5,
+                                  backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
+                                  color: "#ffffff",
+                                  borderWidth: 0
+                                }}
+                                whileTap={{ scale: 0.9 }}
+                              >
+                                <ExternalLink className="w-5 h-5" />
+                              </motion.a>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p>View Prototype</p>
+                            </TooltipContent>
+                          </Tooltip>
                         )}
                       </div>
                     )}

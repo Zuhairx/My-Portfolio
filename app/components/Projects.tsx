@@ -5,13 +5,17 @@ import { ExternalLink, Github } from 'lucide-react';
 import { ImageWithFallback } from './image/ImageWithFallback';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { useNavigate } from 'react-router-dom';
-
-
+import img1 from '../components/image/p1.png'
+import img2 from '../components/image/p2.png'
+import img3 from '../components/image/p3.png'
+import img4 from '../components/image/p4.png'
+import img5 from '../components/image/p5.png'
+import img6 from '../components/image/p6.png'
 
 
 export function Projects() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0 });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const navigate = useNavigate();
 
@@ -20,7 +24,7 @@ export function Projects() {
     {
       title: 'Pudding Data Management System',
       description: 'A Java Swing desktop application integrated with MySQL that allows users to manage menu data through a graphical interface, supporting full CRUD operations, input validation, and real-time database updates.',
-      image: '/My-Portfolio/app/components/image/p1.png',
+      image: img1,
       tags: ['java Swing', 'CRUD', 'GUI', 'MySQL'],
       gradient: 'from-red-500 to-orange-500',
       githubHref: 'https://github.com/Zuhairx/Pudding-Menu-Management-System.git',
@@ -30,7 +34,7 @@ export function Projects() {
     {
       title: 'Book Store Transaction System',
       description: 'A Java console-based application designed to manage bookstore transactions. The system allows users to handle customer purchases, calculate total prices, generate transaction bills, process payments, and manage transaction history with insert and delete functionalities.',
-      image: '/My-Portfolio/app/components/image/p2.png',
+      image: img2,
       tags: ['java', 'OOP', 'Console App'],
       gradient: 'from-red-500 to-orange-500',
       githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
@@ -40,7 +44,7 @@ export function Projects() {
     {
       title: 'Employee Data Management System',
       description: 'A Java Console-based application for managing company employee data, including CRUD (Create, Read, Update, Delete) features, input validation, job grouping, and automatic salary and bonus calculations based on the number of employees per position. ',
-      image: '/My-Portfolio/app/components/image/p3.png',
+      image: img3,
       tags: ['java', 'OOP', 'CRUD', 'Console App'],
       gradient: 'from-red-500 to-orange-500',
       githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
@@ -50,7 +54,7 @@ export function Projects() {
     {
       title: 'Achord.Fly',
       description: 'Achord.ly is an interactive UI/UX prototype built in Figma for a music learning and chord-sharing platform. The app features chord listings and video tutorials, including recommendations, newest updates, and top singers. It also provides request and contribute features for user-submitted chords, along with a personalized profile.',
-      image: '/My-Portfolio/app/components/image/p4.png',
+      image: img4,
       tags: ['Figma', 'Prototyping', 'UI/UX'],
       gradient: 'from-violet-500 to-purple-500',
       // githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
@@ -60,7 +64,7 @@ export function Projects() {
     {
       title: 'Fityhealty',
       description: 'FityHealthy is a UI/UX prototype designed in Figma for a healthy catering and lifestyle program. The app allows users to manage catering schedules, track progress through charts, receive reminders, and consult with doctors. It also features flexible catering plans (daily, weekly, monthly), menu selection, testimonials, and user profiles.',
-      image: './app/components/image/p5.png',
+      image: img5,
       tags: ['Figma', 'Prototyping', 'UI/UX'],
       gradient: 'from-violet-500 to-purple-500',
       // githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
@@ -70,7 +74,7 @@ export function Projects() {
     {
       title: 'Jordiz Fashion',
       description: 'Joridz Fashion is a UI/UX prototype for a modern fashion e-commerce experience with curated collections and trending recommendations. It features AI-based virtual fitting that lets users try outfits using photos before purchasing. The application also supports cart, checkout, and user profile interactions for a seamless shopping journey.',
-      image: '/My-Portfolio/app/components/image/p6.png',
+      image: img6,
       tags: ['Figma', 'Prototyping', 'UI/UX'],
       gradient: 'from-violet-500 to-purple-500',
       // githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',

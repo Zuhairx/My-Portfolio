@@ -98,13 +98,14 @@ export default function App() {
           <Routes>
             <Route path="/" element={
               <main>
-                <section id="home">
+                <section id="home" className="scroll-mt-20">
                   <Hero />
                 </section>
 
                 {/* About section with slide up animation */}
                 <motion.section
                   id="about"
+                  className="scroll-mt-20"
                   initial={{ y: 100, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -116,6 +117,7 @@ export default function App() {
                 {/* Skills section with slide up animation */}
                 <motion.section
                   id="skills"
+                  className="scroll-mt-20"
                   initial={{ y: 100, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -127,6 +129,7 @@ export default function App() {
                 {/* Projects section with slide up animation */}
                 <motion.section
                   id="projects"
+                  className="scroll-mt-20"
                   initial={{ y: 100, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -138,6 +141,7 @@ export default function App() {
                 {/* Contact section with slide up animation */}
                 <motion.section
                   id="contact"
+                  className="scroll-mt-20"
                   initial={{ y: 100, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   viewport={{ once: true, margin: "-100px" }}
