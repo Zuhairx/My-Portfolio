@@ -4,11 +4,12 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  base: '/My-Portfolio/',
   plugins: [
     
     react(),
     tailwindcss(),
-    base: '/My-Portfolio/',
+    
   ],
   resolve: {
     alias: {
