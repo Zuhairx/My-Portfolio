@@ -4,6 +4,7 @@ import { useIsMobile } from './ui/use-mobile';
 import { useEffect, useState } from 'react';
 import { Tooltip, TooltipTrigger, TooltipContent } from './ui/tooltip';
 import { useNavigate } from 'react-router-dom';
+import CV from '../components/image/CV.pdf'
 
 export function Hero() {
   const isMobile = useIsMobile();
@@ -816,7 +817,7 @@ export function Hero() {
                   borderWidth: 0
                  }}
                 onClick={() => {
-                  window.open('./app/components/image/ATS CV sales & IT.pdf', '_blank');
+                  window.open(CV, '_blank');
                 }}
               >
                 Download CV
