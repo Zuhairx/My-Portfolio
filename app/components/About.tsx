@@ -200,15 +200,15 @@ export function About() {
               </motion.h3>
 
               <div className="space-y-3 sm:space-y-4">
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed" style={{ textAlign: window.innerWidth < 640 ? "center" : "justify" }}>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed" style={{ textAlign: "justify" }}>
                   I am a Fresh Graduate in Information Systems with one year of hands-on experience in IT Support, web development, and ERP-based systems. Alongside my technical support role, I actively develop and maintain web applications as a Full Stack Developer, working across both front-end and back-end to deliver functional and scalable solutions.
                 </p>
 
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed" style={{ textAlign: window.innerWidth < 640 ? "center" : "justify" }}>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed" style={{ textAlign: "justify" }}>
                   I have experience translating user and business requirements into clean, efficient code while also designing intuitive and user-friendly interfaces. With a strong interest in UI/UX design, I focus on creating digital products that are not only technically reliable but also easy and enjoyable to use.
                 </p>
 
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed" style={{ textAlign: window.innerWidth < 640 ? "center" : "justify" }}>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed" style={{ textAlign: "justify" }}>
                   Through my professional experience, I have developed strong problem-solving, communication, and collaboration skills by working closely with clients, designers, and developers. I am motivated to grow as a Junior Full Stack Developer and UI/UX Designer, contributing to impactful and user-centered digital solutions.
                 </p>
               </div>

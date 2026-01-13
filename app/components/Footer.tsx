@@ -9,7 +9,7 @@ export function Footer() {
     { Icon: Github, href: 'https://github.com/Zuhairx', label: 'GitHub'},
     { Icon: Linkedin, href: 'https://www.linkedin.com/in/zuhair704', label: 'LinkedIn' },
     { Icon: Instagram, href: 'https://www.instagram.com/zuu.site', label: 'Instagram' },
-    { Icon: Mail, href: 'zuhairyuliansyah688@gmail.com', label: 'Email' },
+    { Icon: Mail, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=zuhairyuliansyah688@gmail.com', label: 'Email' },
   ];
 
   return (

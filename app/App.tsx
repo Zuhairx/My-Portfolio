@@ -10,6 +10,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Loading } from './components/Loading';
 import { AllProjects } from './components/AllProjects';
+import { Certifications } from './components/Certifications'; 
 import { Toaster } from 'sonner';
 
 export default function App() {
@@ -136,6 +137,18 @@ export default function App() {
                   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 >
                   <Projects />
+                </motion.section>
+
+                   {/* Certifications section with slide up animation */}
+                <motion.section
+                  id="Certifications"
+                  className="scroll-mt-20"
+                  initial={{ y: 100, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                >
+                  <Certifications />
                 </motion.section>
 
                 {/* Contact section with slide up animation */}

@@ -16,14 +16,16 @@ export function Navigation() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-    setIsMobileMenuOpen(false); // Close mobile menu after clicking
+    setIsMobileMenuOpen(false); 
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
+    }, 300); 
   };
 
   const navItems = [
@@ -31,6 +33,7 @@ export function Navigation() {
     { name: 'About', id: 'about' },
     { name: 'Skills', id: 'skills' },
     { name: 'Projects', id: 'projects' },
+     { name: 'Certifications', id: 'Certifications' },
     { name: 'Contact', id: 'contact' },
   ];
 
@@ -126,6 +129,8 @@ export function Navigation() {
         animate={{ height: isMobileMenuOpen ? 'auto' : 0 }}
         transition={{ duration: 0.3 }}
       >
+
+        
         <div className="px-4 py-4 space-y-4">
           {navItems.map((item, index) => (
             <motion.button
