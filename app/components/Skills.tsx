@@ -15,8 +15,8 @@ export function Skills() {
       items: [
         { name: 'HTML/CSS', level: 95 },
         { name: 'Javascript', level: 90 },
-         { name: 'Typescript', level: 90 },
-        { name: 'MySQL/SQL', level: 95},
+        { name: 'Typescript', level: 90 },
+        { name: 'MySQL/SQL', level: 95 },
         { name: 'React/Node.js', level: 85 },
         { name: 'Java', level: 90 },
       ]

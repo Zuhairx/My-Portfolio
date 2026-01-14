@@ -14,11 +14,21 @@ import img6 from '../components/image/p6.png'
 
 export function AllProjects() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0});
+  const isInView = useInView(ref, { once: true, amount: 0 });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const navigate = useNavigate();
 
   const projects = [
+
+    {
+      title: 'Stockwise',
+      description: 'StockWise is an inventory management application built using JavaFX and MySQL designed to help businesses manage product inventory, incoming and outgoing transactions, and user management easily and efficiently.',
+      image: img1,
+      tags: ['javaFX', 'CRUD', 'GUI', 'MySQL'],
+      gradient: 'from-red-500 to-orange-500',
+      githubHref: 'https://github.com/Zuhairx/Stockwise-Version-1.0.git',
+    },
+
     {
       title: 'Pudding Data Management System',
       description: 'A Java Swing desktop application integrated with MySQL that allows users to manage menu data through a graphical interface, supporting full CRUD operations, input validation, and real-time database updates.',
@@ -27,14 +37,7 @@ export function AllProjects() {
       gradient: 'from-red-500 to-orange-500',
       githubHref: 'https://github.com/Zuhairx/Pudding-Menu-Management-System.git',
     },
-    {
-      title: 'Book Store Transaction System',
-      description: 'A Java console-based application designed to manage bookstore transactions. The system allows users to handle customer purchases, calculate total prices, generate transaction bills, process payments, and manage transaction history with insert and delete functionalities.',
-      image: img2,
-      tags: ['java', 'OOP', 'Console App'],
-      gradient: 'from-red-500 to-orange-500',
-      githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
-    },
+
     {
       title: 'Employee Data Management System',
       description: 'A Java Console-based application for managing company employee data, including CRUD (Create, Read, Update, Delete) features, input validation, job grouping, and automatic salary and bonus calculations based on the number of employees per position.',

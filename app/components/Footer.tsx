@@ -6,7 +6,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { Icon: Github, href: 'https://github.com/Zuhairx', label: 'GitHub'},
+    { Icon: Github, href: 'https://github.com/Zuhairx', label: 'GitHub' },
     { Icon: Linkedin, href: 'https://www.linkedin.com/in/zuhair704', label: 'LinkedIn' },
     { Icon: Instagram, href: 'https://www.instagram.com/zuu.site', label: 'Instagram' },
     { Icon: Mail, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=zuhairyuliansyah688@gmail.com', label: 'Email' },
@@ -40,17 +40,19 @@ export function Footer() {
                       href={href}
                       aria-label={label}
                       className="w-12 h-12 rounded-full border-2 border-cyan-400/50 flex items-center justify-center text-cyan-400  transition-all"
-                      whileHover={{ scale: 1.1, rotate: 5,
+                      whileHover={{
+                        scale: 1.1, rotate: 5,
                         backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
-                    color: "#ffffff",
-                    borderWidth: 0
+                        color: "#ffffff",
+                        borderWidth: 0
                       }}
-                      whileTap={{ scale: 0.9,
-                    rotate: 5,
-                    backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
-                    color: "#ffffff",
-                    borderWidth: 0
-                   }}
+                      whileTap={{
+                        scale: 0.9,
+                        rotate: 5,
+                        backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
+                        color: "#ffffff",
+                        borderWidth: 0
+                      }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}

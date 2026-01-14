@@ -16,7 +16,7 @@ export function Navigation() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    setIsMobileMenuOpen(false); 
+    setIsMobileMenuOpen(false);
     setTimeout(() => {
       const element = document.getElementById(sectionId);
       if (element) {
@@ -25,7 +25,7 @@ export function Navigation() {
           block: 'start',
         });
       }
-    }, 300); 
+    }, 300);
   };
 
   const navItems = [
@@ -33,29 +33,27 @@ export function Navigation() {
     { name: 'About', id: 'about' },
     { name: 'Skills', id: 'skills' },
     { name: 'Projects', id: 'projects' },
-     { name: 'Certifications', id: 'Certifications' },
+    { name: 'Certifications', id: 'Certifications' },
     { name: 'Contact', id: 'contact' },
   ];
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100'
           : 'bg-transparent'
-      }`}
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ delay: 1, duration: 2, type: "spring"}}
+      transition={{ delay: 1, duration: 2, type: "spring" }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <motion.div
-            className={`text-2xl ${
-              isScrolled
+            className={`text-2xl ${isScrolled
                 ? 'bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'
                 : 'text-white'
-            }`}
+              }`}
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, y: -30, rotate: -10 }}
             animate={{ opacity: 1, y: 0, rotate: 0 }}
@@ -75,10 +73,9 @@ export function Navigation() {
               <motion.button
                 key={index}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative ${
-                  isScrolled ? 'text-gray-700 ':
-                  'text-white'
-                } transition-all bg-transparent border-none`}
+                className={`relative ${isScrolled ? 'text-gray-700 ' :
+                    'text-white'
+                  } transition-all bg-transparent border-none`}
                 whileHover={{
                   scale: 1.1
                 }}
@@ -99,9 +96,8 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className={`md:hidden ${
-              isScrolled ? 'text-gray-700' : 'text-white'
-            }`}
+            className={`md:hidden ${isScrolled ? 'text-gray-700' : 'text-white'
+              }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileTap={{ scale: 0.9 }}
             initial={{ opacity: 0, scale: 0.8, rotate: 180 }}
@@ -130,7 +126,7 @@ export function Navigation() {
         transition={{ duration: 0.3 }}
       >
 
-        
+
         <div className="px-4 py-4 space-y-4">
           {navItems.map((item, index) => (
             <motion.button

@@ -90,9 +90,11 @@ export function Hero() {
       <motion.div
         className="absolute left-1/2 bottom-0 sm:bottom-8 md:bottom-16 transform -translate-x-1/2 z-10 scale-75 sm:scale-100"
         initial={{ y: 0, x: 0, opacity: 0 }}
-        animate={{ y: isMobile ? '-80vh' : '-50vh', x: '-40vw',
+        animate={{
+          y: isMobile ? '-80vh' : '-50vh', x: '-40vw',
           rotate: [0, 2, -2, 1, -1, 0],
-          opacity: 1 }}
+          opacity: 1
+        }}
         transition={{
           duration: 3,
           delay: 0.5,
@@ -783,11 +785,13 @@ export function Hero() {
             >
               <motion.button
                 className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-lg flex items-center gap-2 transition-all shadow-lg shadow-cyan-500/50 "
-                whileHover={{ scale: 1.1,
-                      rotate: -1,
-                      backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
-                      color: "#ffffff",
-                      borderWidth: 0}}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: -1,
+                  backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
+                  color: "#ffffff",
+                  borderWidth: 0
+                }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => navigate('/projects')}
               >
@@ -804,18 +808,20 @@ export function Hero() {
               <motion.button
                 className="border-2 border-cyan-400 text-cyan-400 bg-transparent  px-8 py-4 rounded-lg transition-all shadow-lg shadow-cyan-500/50 "
 
-                whileHover={{ scale: 1.1,
+                whileHover={{
+                  scale: 1.1,
                   rotate: 1,
                   backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
                   color: "#ffffff",
                   borderWidth: 0
-                 }}
-                whileTap={{ scale: 0.95,
+                }}
+                whileTap={{
+                  scale: 0.95,
                   rotate: 1,
                   backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
                   color: "#ffffff",
                   borderWidth: 0
-                 }}
+                }}
                 onClick={() => {
                   window.open(CV, '_blank');
                 }}
@@ -843,17 +849,20 @@ export function Hero() {
                   <motion.a
                     href={href}
                     className="w-12 h-12 rounded-full border-2 border-cyan-400/50 flex items-center justify-center text-cyan-400 transition-all"
-                    whileHover={{ scale: 1.1,
-                    rotate: 5,
-                    backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
-                    color: "#ffffff",
-                    borderWidth: 0 }}
-                    whileTap={{ scale: 0.9,
-                    rotate: 5,
-                    backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
-                    color: "#ffffff",
-                    borderWidth: 0
-                   }}
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: 5,
+                      backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
+                      color: "#ffffff",
+                      borderWidth: 0
+                    }}
+                    whileTap={{
+                      scale: 0.9,
+                      rotate: 5,
+                      backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
+                      color: "#ffffff",
+                      borderWidth: 0
+                    }}
                     initial={{ opacity: 0, y: 50, rotate: -10 }}
                     animate={{ opacity: 1, y: 0, rotate: 0 }}
                     transition={{ delay: 0.1 + index * 0.1, duration: 0.2 }}
@@ -876,7 +885,7 @@ export function Hero() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
-        
+
       >
         <div className="w-6 h-10 rounded-full border-2 border-cyan-400 flex justify-center p-2">
           <motion.div

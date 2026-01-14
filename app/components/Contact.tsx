@@ -32,7 +32,7 @@ export function Contact() {
     setFormData({ ...formData, email });
 
     if (email && !email.endsWith('@mail.com')) {
-      
+
     } else {
       setEmailError('');
     }

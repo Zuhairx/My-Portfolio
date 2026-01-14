@@ -10,7 +10,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Loading } from './components/Loading';
 import { AllProjects } from './components/AllProjects';
-import { Certifications } from './components/Certifications'; 
+import { Certifications } from './components/Certifications';
 import { Toaster } from 'sonner';
 
 export default function App() {
@@ -139,7 +139,7 @@ export default function App() {
                   <Projects />
                 </motion.section>
 
-                   {/* Certifications section with slide up animation */}
+                {/* Certifications section with slide up animation */}
                 <motion.section
                   id="Certifications"
                   className="scroll-mt-20"

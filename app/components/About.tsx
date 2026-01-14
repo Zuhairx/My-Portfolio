@@ -225,8 +225,8 @@ export function About() {
                       animate={isInView ? "visible" : "hidden"}
                       custom={index}
                       whileHover={{ scale: 1.05, borderColor: '#06b6d4', rotate: [0, -2, 2, 0] }}
-                      
-                      transition={{ duration: 0.3}}
+
+                      transition={{ duration: 0.3 }}
                     >
                       {tech}
                     </motion.span>

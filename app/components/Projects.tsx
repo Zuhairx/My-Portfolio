@@ -22,23 +22,21 @@ export function Projects() {
   const projects = [
 
     {
-      title: 'Pudding Data Management System',
-      description: 'A Java Swing desktop application integrated with MySQL that allows users to manage menu data through a graphical interface, supporting full CRUD operations, input validation, and real-time database updates.',
+      title: 'Stockwise',
+      description: 'StockWise is an inventory management application built using JavaFX and MySQL designed to help businesses manage product inventory, incoming and outgoing transactions, and user management easily and efficiently.',
       image: img1,
-      tags: ['java Swing', 'CRUD', 'GUI', 'MySQL'],
+      tags: ['javaFX', 'CRUD', 'GUI', 'MySQL'],
       gradient: 'from-red-500 to-orange-500',
-      githubHref: 'https://github.com/Zuhairx/Pudding-Menu-Management-System.git',
-      // externalHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git'
+      githubHref: 'https://github.com/Zuhairx/Stockwise-Version-1.0.git',
     },
 
     {
-      title: 'Book Store Transaction System',
-      description: 'A Java console-based application designed to manage bookstore transactions. The system allows users to handle customer purchases, calculate total prices, generate transaction bills, process payments, and manage transaction history with insert and delete functionalities.',
+      title: 'Pudding Data Management System',
+      description: 'A Java Swing desktop application integrated with MySQL that allows users to manage menu data through a graphical interface, supporting full CRUD operations, input validation, and real-time database updates.',
       image: img2,
-      tags: ['java', 'OOP', 'Console App'],
+      tags: ['java Swing', 'CRUD', 'GUI', 'MySQL'],
       gradient: 'from-red-500 to-orange-500',
-      githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
-      // externalHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git'
+      githubHref: 'https://github.com/Zuhairx/Pudding-Menu-Management-System.git',
     },
 
     {
@@ -48,7 +46,6 @@ export function Projects() {
       tags: ['java', 'OOP', 'CRUD', 'Console App'],
       gradient: 'from-red-500 to-orange-500',
       githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
-      // externalHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git'
     },
 
     {
@@ -57,7 +54,6 @@ export function Projects() {
       image: img4,
       tags: ['Figma', 'Prototyping', 'UI/UX'],
       gradient: 'from-violet-500 to-purple-500',
-      // githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
       externalHref: 'https://www.figma.com/proto/ENJQjkx7BlkfaBFj7VAMNh/Achordly?node-id=0-1&t=hRKBitLN24v3G3Qt-1'
     },
 
@@ -67,7 +63,6 @@ export function Projects() {
       image: img5,
       tags: ['Figma', 'Prototyping', 'UI/UX'],
       gradient: 'from-violet-500 to-purple-500',
-      // githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
       externalHref: 'https://www.figma.com/proto/J6fWDnQzxzGs6ddHnTGStH/FityHealthy?node-id=0-1&t=jwpvVzm9W8tuorGc-1'
     },
 
@@ -77,7 +72,6 @@ export function Projects() {
       image: img6,
       tags: ['Figma', 'Prototyping', 'UI/UX'],
       gradient: 'from-violet-500 to-purple-500',
-      // githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
       externalHref: 'https://www.figma.com/proto/0AKUUrOc30rxBkeLJih4k3/Sketch-Jordiz-s-Fashion?node-id=0-1&t=roLDeWn3cU7xLmol-1'
     },
 
@@ -219,10 +213,12 @@ export function Projects() {
               color: "#ffffff",
               borderWidth: 0,
             }}
-            whileTap={{ scale: 1.1, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+            whileTap={{
+              scale: 1.1, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
               backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
               color: "#ffffff",
-              borderWidth: 0, }}
+              borderWidth: 0,
+            }}
           >
             View All Projects
           </motion.button>

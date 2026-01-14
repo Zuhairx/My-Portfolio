@@ -18,15 +18,15 @@ export function Certifications() {
   const Certificate = [
     {
       title: 'Mendix Rapid Developer',
-      description: 
-      '<strong>Certification ID :</strong> 67694 <br> <strong>Obtained Date :</strong> December 22, 2023<br><strong>Issued by :</strong> Mendix',
+      description:
+        '<strong>Certification ID :</strong> 67694 <br> <strong>Obtained Date :</strong> December 22, 2023<br><strong>Issued by :</strong> Mendix',
       image: img1,
       tags: ['Mendix', 'Rapid Developer'],
       gradient: 'from-cyan-500 to-blue-500',
       externalHref: ext1,
     },
 
-    
+
 
   ];
 
@@ -79,9 +79,9 @@ export function Certifications() {
                       <Tooltip>
                         <TooltipTrigger asChild>
                           <motion.a
-                             onClick={() => {
-                                              window.open(certificate.externalHref, '_blank');
-                             }}
+                            onClick={() => {
+                              window.open(certificate.externalHref, '_blank');
+                            }}
                             className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors"
                             whileHover={{
                               scale: 1.1, rotate: 5,
@@ -125,7 +125,7 @@ export function Certifications() {
           ))}
         </div>
 
-     </div>
+      </div>
     </section>
   );
 }
