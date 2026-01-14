@@ -793,7 +793,7 @@ export function Hero() {
                   borderWidth: 0
                 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => navigate('/projects')}
+                aria-label="View My Work" onClick={() => navigate('/projects')}
               >
                 View My Work
                 <ArrowRight className="w-5 h-5" />
@@ -822,9 +822,7 @@ export function Hero() {
                   color: "#ffffff",
                   borderWidth: 0
                 }}
-                onClick={() => {
-                  window.open(CV, '_blank');
-                }}
+aria-label="Download CV" onClick={() => { window.open(CV, '_blank'); }}
               >
                 Download CV
               </motion.button>

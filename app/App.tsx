@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+import { motion } from 'motion/react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -9,13 +9,31 @@ import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Loading } from './components/Loading';
-import { AllProjects } from './components/AllProjects';
 import { Certifications } from './components/Certifications';
 import { Toaster } from 'sonner';
+import { setMeta } from './utils/seo';
+
+const AllProjects = lazy(() => import('./components/AllProjects').then((m) => ({ default: m.AllProjects })));
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [showTransition, setShowTransition] = useState(false);
+  const location = useLocation();
+
+  // Dynamic SEO per route
+  useEffect(() => {
+    const path = location.pathname;
+    const seo = path.startsWith('/projects')
+      ? {
+          title: 'Projects | Zuhair',
+          description: 'A curated showcase of full-stack projects by Zuhair.',
+        }
+      : {
+          title: 'Zuhair | Full Stack Developer',
+          description: 'Portfolio showcasing projects, skills, and certifications.',
+        };
+    setMeta({ ...seo, url: window.location.href });
+  }, [location.pathname]);
 
   const handleLoadingComplete = () => {
     // Start transition sequence
@@ -28,7 +46,7 @@ export default function App() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative" id="content" aria-label="Main content">
       {/* Loading screen */}
       {isLoading && (
         <Loading onComplete={handleLoadingComplete} />
@@ -164,19 +182,14 @@ export default function App() {
                 </motion.section>
               </main>
             } />
-            <Route path="/projects" element={<AllProjects />} />
+            <Route path="/projects" element={
+              <Suspense fallback={<div>Loading…</div>}>
+                <AllProjects />
+              </Suspense>
+            } />
           </Routes>
 
-          {/* Footer with slide up animation */}
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <Footer />
-          </motion.div>
-
+          <Footer />
           <Toaster />
         </motion.div>
       )}

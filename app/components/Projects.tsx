@@ -128,7 +128,7 @@ export function Projects() {
                           <TooltipTrigger asChild>
                             <motion.a
                               href={project.githubHref}
-                              target='_blank'
+                              target='_blank' rel="noopener noreferrer"
                               className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors"
                               whileHover={{
                                 scale: 1.1, rotate: 5,
@@ -151,7 +151,7 @@ export function Projects() {
                           <TooltipTrigger asChild>
                             <motion.a
                               href={project.externalHref}
-                              target='_blank'
+                              target='_blank' rel="noopener noreferrer"
                               className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors"
                               whileHover={{
                                 scale: 1.1, rotate: 5,

@@ -1,8 +1,10 @@
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 export function Navigation() {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -10,22 +12,16 @@ export function Navigation() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     setIsMobileMenuOpen(false);
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
-    }, 300);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   const navItems = [
@@ -37,6 +33,8 @@ export function Navigation() {
     { name: 'Contact', id: 'contact' },
   ];
 
+  const currentPath = location.pathname;
+
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
@@ -45,7 +43,8 @@ export function Navigation() {
         }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ delay: 1, duration: 2, type: "spring" }}
+      transition={{ delay: 1, duration: 2, type: 'spring' }}
+      aria-label="Main navigation"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -57,29 +56,23 @@ export function Navigation() {
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, y: -30, rotate: -10 }}
             animate={{ opacity: 1, y: 0, rotate: 0 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.1,
-              type: "spring",
-              bounce: 0.4
-            }}
+            transition={{ duration: 0.8, delay: 0.1, type: 'spring', bounce: 0.4 }}
           >
             {'<ZuuPortfolio/>'}
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8" aria-label="Main menu">
             {navItems.map((item, index) => (
               <motion.button
                 key={index}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative ${isScrolled ? 'text-gray-700 ' :
-                    'text-white'
-                  } transition-all bg-transparent border-none`}
+                aria-label={`Navigate to ${item.name}`}
+                aria-current={currentPath === `/${item.id}` ? 'page' : undefined}
+                className={`relative ${isScrolled ? 'text-gray-700' : 'text-white'} transition-all bg-transparent border-none`}
                 whileHover={{
                   scale: 1.1
                 }}
-
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0 + index * 0.1 }}
@@ -96,8 +89,7 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className={`md:hidden ${isScrolled ? 'text-gray-700' : 'text-white'
-              }`}
+            className={`md:hidden ${isScrolled ? 'text-gray-700' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileTap={{ scale: 0.9 }}
             initial={{ opacity: 0, scale: 0.8, rotate: 180 }}
@@ -105,9 +97,10 @@ export function Navigation() {
             transition={{
               duration: 0.5,
               delay: 1.2,
-              type: "spring",
+              type: 'spring',
               bounce: 0.5
             }}
+            aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -125,17 +118,15 @@ export function Navigation() {
         animate={{ height: isMobileMenuOpen ? 'auto' : 0 }}
         transition={{ duration: 0.3 }}
       >
-
-
-        <div className="px-4 py-4 space-y-4">
+        <div className="px-4 py-4 space-y-4" aria-label="Mobile navigation items">
           {navItems.map((item, index) => (
             <motion.button
               key={index}
               onClick={() => scrollToSection(item.id)}
               className="block text-gray-700 transition-colors py-2 rounded-md pl-4 bg-transparent border-none text-left w-full"
+              aria-label={`Navigate to ${item.name}`}
               whileTap={{
-                background: "linear-gradient(to right, #06b6d4, #3b82f6)",
-                color: "#ffffff"
+                background: 'linear-gradient(to right, #06b6d4, #3b82f6)'
               }}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
