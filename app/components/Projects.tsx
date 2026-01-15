@@ -21,6 +21,7 @@ export function Projects() {
 
   const projects = [
 
+
     {
       title: 'Stockwise',
       description: 'StockWise is an inventory management application built using JavaFX and MySQL designed to help businesses manage product inventory, incoming and outgoing transactions, and user management easily and efficiently.',
@@ -31,21 +32,22 @@ export function Projects() {
     },
 
     {
+      title: 'Lvinnamon',
+      description: 'Lvinnamon is a  website for a cinnamon rolls shop built, The website features product listings (Classic, Gourmet, and Vegan), company profile, store location, user registration, and interactive navigation designed to provide an engaging user experience.',
+      image: img3,
+      tags: ['HTML', 'CSS', 'JavaScript', 'Responsive Web'],
+      gradient: 'from-green-400 to-emerald-500',
+      githubHref: 'https://github.com/Zuhairx/Lvinnamon.git',
+    },
+
+
+    {
       title: 'Pudding Data Management System',
       description: 'A Java Swing desktop application integrated with MySQL that allows users to manage menu data through a graphical interface, supporting full CRUD operations, input validation, and real-time database updates.',
       image: img2,
       tags: ['java Swing', 'CRUD', 'GUI', 'MySQL'],
       gradient: 'from-red-500 to-orange-500',
       githubHref: 'https://github.com/Zuhairx/Pudding-Menu-Management-System.git',
-    },
-
-    {
-      title: 'Employee Data Management System',
-      description: 'A Java Console-based application for managing company employee data, including CRUD (Create, Read, Update, Delete) features, input validation, job grouping, and automatic salary and bonus calculations based on the number of employees per position. ',
-      image: img3,
-      tags: ['java', 'OOP', 'CRUD', 'Console App'],
-      gradient: 'from-red-500 to-orange-500',
-      githubHref: 'https://github.com/Zuhairx/Book-Store-Project---Java.git',
     },
 
     {
