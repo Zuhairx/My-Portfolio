@@ -5,8 +5,11 @@ import { Download, ExternalLink, Github } from 'lucide-react';
 import { ImageWithFallback } from './image/ImageWithFallback';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { useNavigate } from 'react-router-dom';
-import img1 from '../components/image/mendiximg.png';
-import ext1 from '../components/image/mendix.jpg';
+import img1 from '../components/image/Icon/mendixIcon.png';
+import ext1 from '../components/image/Certificates/c1.jpg';
+import img2 from '../components/image/Icon/googleIcon.png';
+import ext2 from '../components/image/Certificates/c2.pdf';
+
 
 
 export function Certifications() {
@@ -16,12 +19,23 @@ export function Certifications() {
   const navigate = useNavigate();
 
   const Certificate = [
+
+    {
+      title: 'Google Prompting Essentials',
+      description:
+        '<strong>Certification ID :</strong> QC1RG2SZELO5 <br> <strong>Obtained Date :</strong> January 16, 2026<br><strong>Issued by :</strong> Google',
+      image: img2,
+      tags: ['Generative AI', 'Prompt Engineering','Multimodal Prompting'],
+      gradient: 'from-cyan-500 to-blue-500',
+      externalHref: ext2,
+    },
+
     {
       title: 'Mendix Rapid Developer',
       description:
         '<strong>Certification ID :</strong> 67694 <br> <strong>Obtained Date :</strong> December 22, 2023<br><strong>Issued by :</strong> Mendix',
       image: img1,
-      tags: ['Mendix', 'Rapid Developer'],
+      tags: ['Microflows', 'Workflows', 'UI Design', 'Data Management' ],
       gradient: 'from-cyan-500 to-blue-500',
       externalHref: ext1,
     },

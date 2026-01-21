@@ -5,12 +5,12 @@ import { ExternalLink, Github } from 'lucide-react';
 import { ImageWithFallback } from './image/ImageWithFallback';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { useNavigate } from 'react-router-dom';
-import img1 from '../components/image/p1.png'
-import img2 from '../components/image/p2.png'
-import img3 from '../components/image/p3.png'
-import img4 from '../components/image/p4.png'
-import img5 from '../components/image/p5.png'
-import img6 from '../components/image/p6.png'
+import img1 from '../components/image//Projects/p1.png';
+import img2 from '../components/image/Projects/p2.png';
+import img3 from '../components/image/Projects/p3.png';
+import img4 from '../components/image/Projects/p4.png';
+import img5 from '../components/image/Projects/p5.png';
+import img6 from '../components/image/Projects/p6.png';
 
 
 export function Projects() {
