@@ -177,7 +177,7 @@ export function Projects() {
 
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-2xl mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-4 flex-1">{project.description}</p>
+                  <p className="text-gray-600 mb-4 flex-1 " style={{ textAlign: "justify" }}>{project.description}</p>
 
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (

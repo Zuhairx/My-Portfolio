@@ -43,7 +43,7 @@ export function Navigation() {
         }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ delay: 1, duration: 2, type: 'spring' }}
+      transition={{ delay: 1, duration: 2 }}
       aria-label="Main navigation"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +56,7 @@ export function Navigation() {
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, y: -30, rotate: -10 }}
             animate={{ opacity: 1, y: 0, rotate: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, type: 'spring', bounce: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.1}}
           >
             {'<ZuuPortfolio/>'}
           </motion.div>

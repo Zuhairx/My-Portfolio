@@ -215,7 +215,7 @@ export function About() {
 
               <div className="pt-4">
                 <h4 className="text-base sm:text-lg mb-3 sm:mb-4 text-gray-900">Tech Stack Highlights:</h4>
-                <div className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {['HTML/CSS', 'Javascript', 'Typescript', 'React', 'Java', 'MySQL/SQL', 'ERP', 'Figma', 'Wordpress', 'Mendix'].map((tech, index) => (
                     <motion.span
                       key={index}
