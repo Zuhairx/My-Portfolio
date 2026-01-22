@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { Download, ExternalLink, Github } from 'lucide-react';
 import { ImageWithFallback } from './image/ImageWithFallback';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
+import { Dialog, DialogContent } from './ui/dialog';
 import { useNavigate } from 'react-router-dom';
 import img1 from '../components/image/badge/b1.png';
 import ext1 from '../components/image/Certificates/c1.pdf';
@@ -24,6 +25,7 @@ export function Certifications() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0 });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
   const navigate = useNavigate();
 
   const Certificate = [
@@ -45,7 +47,7 @@ export function Certifications() {
       image: img5,
       tags: ['Generative AI', 'Machine Learning', 'NLP','LLM'],
       gradient: 'from-orange-400 to-amber-400',
-      externalHref: ext4,
+      externalHref: ext5,
     },
 
     {
@@ -140,10 +142,8 @@ export function Certifications() {
                     <div className={`absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent transition-opacity duration-300 flex items-end justify-center gap-4 pb-6 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`}>
                       <Tooltip>
                         <TooltipTrigger asChild>
-                          <motion.a
-                            onClick={() => {
-                              window.open(certificate.externalHref, '_blank');
-                            }}
+                          <motion.button
+                            onClick={() => setSelectedCertificate(certificate)}
                             className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors"
                             whileHover={{
                               scale: 1.1, rotate: 5,
@@ -154,7 +154,7 @@ export function Certifications() {
                             whileTap={{ scale: 0.9 }}
                           >
                             <ExternalLink className="w-5 h-5" />
-                          </motion.a>
+                          </motion.button>
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Preview Certificate</p>
@@ -186,6 +186,36 @@ export function Certifications() {
             </motion.div>
           ))}
         </div>
+
+        {selectedCertificate && (
+          <div className="fixed inset-0 bg-black/30 flex items-center justify-center p-0 m-0 overflow-hidden z-50">
+            <div className="relative w-full h-full flex items-center justify-center flex-col gap-4 text-sm lg:text-base">
+              {selectedCertificate.externalHref.endsWith('.pdf') ? (
+                <iframe
+                  src={selectedCertificate.externalHref}
+                  className="w-full max-w-4xl h-[90vh]"
+                  title={selectedCertificate.title}
+                />
+              ) : (
+                <img
+                  src={selectedCertificate.externalHref}
+                  alt={selectedCertificate.title}
+                  className="max-w-[80%] max-h-[70vh] lg:max-h-[80vh] object-contain"
+                />
+              )}
+              <div className="flex justify-center items-center gap-4">
+                <p className="text-white p-2 bg-black/80 text-center">{selectedCertificate.title}</p>
+              </div>
+              <button
+                onClick={() => setSelectedCertificate(null)}
+                className="absolute top-4 right-4 text-white w-10 h-10 bg-black/50 rounded-full hover:bg-black/80 font-bold"
+                title="Close"
+              >
+                x
+              </button>
+            </div>
+          </div>
+        )}
 
       </div>
     </section>
