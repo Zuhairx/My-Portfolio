@@ -42,12 +42,12 @@ export function Projects() {
 
 
     {
-      title: 'Pudding Data Management System',
-      description: 'A Java Swing desktop application integrated with MySQL that allows users to manage menu data through a graphical interface, supporting full CRUD operations, input validation, and real-time database updates.',
+      title: 'Puddly',
+      description: 'A Java desktop application integrated with MySQL that allows users to manage menu data through a graphical interface, supporting full CRUD operations, input validation, and real-time database updates.',
       image: img2,
       tags: ['java Swing', 'CRUD', 'GUI', 'MySQL'],
       gradient: 'from-red-500 to-orange-500',
-      githubHref: 'https://github.com/Zuhairx/Pudding-Menu-Management-System.git',
+      githubHref: 'https://github.com/Zuhairx/Puddly.git',
     },
 
     {

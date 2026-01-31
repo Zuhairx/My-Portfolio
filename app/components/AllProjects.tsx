@@ -39,7 +39,7 @@ export function AllProjects() {
         },
     
     {
-      title: 'Pudding Data Management System',
+      title: 'Puddly',
       description: 'A Java Swing desktop application integrated with MySQL that allows users to manage menu data through a graphical interface, supporting full CRUD operations, input validation, and real-time database updates.',
       image: img2,
       tags: ['java Swing', 'CRUD', 'GUI', 'MySQL'],
