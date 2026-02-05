@@ -6,7 +6,7 @@ export const certificationsData = [
     description:
       '<strong>Certification ID :</strong> BZUUU2VWYSO7 <br> <strong>Obtained Date :</strong> February 4, 2026<br><strong>Issued by :</strong> Google',
     image: '/My-Portfolio/image/badge/b7.png',
-    tags: ['TTechnical Support', 'IT Infrastructure', 'NEtwork Troubleshooting', 'Network Security', 'Computer Hardware'],
+    tags: ['TTechnical Support', 'IT Infrastructure', 'Troubleshooting', 'Network Security', 'Computer Hardware'],
     gradient: 'from-orange-400 to-amber-400',
     externalHref: '/My-Portfolio/image/Certificates/c7.pdf',
   },
