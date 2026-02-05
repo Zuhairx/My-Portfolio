@@ -81,7 +81,7 @@ export function Contact() {
         window.open(`https://wa.me/${phoneNumber}`, '_blank');
         break;
       case 'Location':
-        window.open('https://maps.app.goo.gl/wuDTfXNqs5au46Pd7', '_blank');
+        window.open('https://maps.app.goo.gl/xg7Fnf4qYvR23tDz9', '_blank');
         break;
       default:
         break;
