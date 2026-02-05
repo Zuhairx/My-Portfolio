@@ -793,7 +793,7 @@ export function Hero() {
                   borderWidth: 0
                 }}
                 whileTap={{ scale: 0.95 }}
-                aria-label="View My Work" onClick={() => navigate('/projects')}
+                aria-label="View My Work" onClick={() => navigate('./AllProjects')}
               >
                 View My Work
                 <ArrowRight className="w-5 h-5" />
