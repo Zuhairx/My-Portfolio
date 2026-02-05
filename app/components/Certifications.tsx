@@ -4,11 +4,8 @@ import { useRef, useState } from 'react';
 import { Download, ExternalLink, Github } from 'lucide-react';
 import { ImageWithFallback } from './image/ImageWithFallback';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
-import { Dialog, DialogContent } from './ui/dialog';
 import { useNavigate } from 'react-router-dom';
 import { certificationsData } from './certificationsData';
-
-
 
 export function Certifications() {
   const ref = useRef(null);
@@ -116,11 +113,12 @@ export function Certifications() {
           <div className="fixed inset-0 bg-black/30 flex items-center justify-center p-0 m-0 overflow-hidden z-50">
             <div className="relative w-full h-full flex items-center justify-center flex-col gap-4 text-sm lg:text-base">
               {selectedCertificate.externalHref.endsWith('.pdf') ? (
-                <iframe
-                  src={selectedCertificate.externalHref}
-                  className="w-full max-w-4xl h-[90vh]"
-                  title={selectedCertificate.title}
-                />
+              <object
+                data={selectedCertificate.externalHref}
+                type="application/pdf"
+                className="w-full max-w-4xl h-[90vh]"
+                title={selectedCertificate.title}
+              />
               ) : (
                 <img
                   src={selectedCertificate.externalHref}

@@ -1,14 +1,13 @@
 
-
 export const certificationsData = [
   {
-    title: 'Google Prompting Essentials',
+    title: 'Google IT Support',
     description:
-      '<strong>Certification ID :</strong> QC1RG2SZELO5 <br> <strong>Obtained Date :</strong> January 16, 2026<br><strong>Issued by :</strong> Google',
-    image: '/My-Portfolio/image/badge/b6.png',
-    tags: ['Generative AI', 'Prompt Engineering', 'Multimodal Prompting'],
+      '<strong>Certification ID :</strong> BZUUU2VWYSO7 <br> <strong>Obtained Date :</strong> February 4, 2026<br><strong>Issued by :</strong> Google',
+    image: '/My-Portfolio/image/badge/b7.png',
+    tags: ['TTechnical Support', 'IT Infrastructure', 'NEtwork Troubleshooting', 'Network Security', 'Computer Hardware'],
     gradient: 'from-orange-400 to-amber-400',
-    externalHref: '/My-Portfolio/image/Certificates/c6.pdf',
+    externalHref: '/My-Portfolio/image/Certificates/c7.pdf',
   },
   {
     title: 'Google Prompting Essentials',
