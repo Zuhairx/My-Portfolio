@@ -5,12 +5,7 @@ import { ExternalLink, Github, ArrowLeft } from 'lucide-react';
 import { ImageWithFallback } from './image/ImageWithFallback';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { useNavigate } from 'react-router-dom';
-import img1 from '../components/image//Projects/p1.png';
-import img2 from '../components/image/Projects/p2.png';
-import img3 from '../components/image/Projects/p3.png';
-import img4 from '../components/image/Projects/p4.png';
-import img5 from '../components/image/Projects/p5.png';
-import img6 from '../components/image/Projects/p6.png';
+import { projectsData } from './projectData';
 
 export function AllProjects() {
   const ref = useRef(null);
@@ -18,61 +13,8 @@ export function AllProjects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const navigate = useNavigate();
 
-  const projects = [
-
-    {
-      title: 'Stockwise',
-      description: 'StockWise is an inventory management application built using JavaFX and MySQL designed to help businesses manage product inventory, incoming and outgoing transactions, and user management easily and efficiently.',
-      image: img1,
-      tags: ['javaFX', 'CRUD', 'GUI', 'MySQL'],
-      gradient: 'from-red-500 to-orange-500',
-      githubHref: 'https://github.com/Zuhairx/Stockwise-Version-1.0.git',
-    },
-
-     {
-          title: 'Lvinnamon',
-          description: 'Lvinnamon is a  website for a cinnamon rolls shop built, The website features product listings (Classic, Gourmet, and Vegan), company profile, store location, user registration, and interactive navigation designed to provide an engaging user experience.',
-          image: img3,
-          tags: ['HTML', 'CSS', 'JavaScript', 'Responsive Web'],
-          gradient: 'from-green-400 to-emerald-500',
-          githubHref: 'https://github.com/Zuhairx/Lvinnamon.git',
-        },
-    
-    {
-      title: 'Puddly',
-      description: 'A Java Swing desktop application integrated with MySQL that allows users to manage menu data through a graphical interface, supporting full CRUD operations, input validation, and real-time database updates.',
-      image: img2,
-      tags: ['java Swing', 'CRUD', 'GUI', 'MySQL'],
-      gradient: 'from-red-500 to-orange-500',
-      githubHref: 'https://github.com/Zuhairx/Pudding-Menu-Management-System.git',
-    },
-
-    {
-      title: 'Achord.Fly',
-      description: 'Comprehensive component library with documentation, accessibility features, and design tokens for enterprise use.',
-      image: img4,
-      tags: ['Figma', 'Prototyping', 'UI/UX'],
-      gradient: 'from-violet-500 to-purple-500',
-      externalHref: 'https://www.figma.com/proto/ENJQjkx7BlkfaBFj7VAMNh/Achordly?node-id=0-1&t=hRKBitLN24v3G3Qt-1'
-    },
-    {
-      title: 'Fityhealty',
-      description: 'Intelligent project management tool with AI-powered task prioritization, team collaboration, and productivity analytics.',
-      image: img5,
-      tags: ['Figma', 'Prototyping', 'UI/UX'],
-      gradient: 'from-violet-500 to-purple-500',
-      externalHref: 'https://www.figma.com/proto/J6fWDnQzxzGs6ddHnTGStH/FityHealthy?node-id=0-1&t=jwpvVzm9W8tuorGc-1'
-    },
-    {
-      title: 'Joridz Fashion',
-      description: 'Fashion design and branding project showcasing creative UI/UX concepts and modern design principles.',
-      image: img6,
-      tags: ['Figma', 'Prototyping', 'UI/UX'],
-      gradient: 'from-violet-500 to-purple-500',
-      externalHref: 'https://www.figma.com/proto/0AKUUrOc30rxBkeLJih4k3/Sketch-Jordiz-s-Fashion?node-id=0-1&t=roLDeWn3cU7xLmol-1'
-    },
-  ];
-
+  const projects = projectsData;
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900">
       {/* Navigation */}
