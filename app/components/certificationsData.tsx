@@ -1,5 +1,6 @@
 
 export const certificationsData = [
+
   {
     title: 'Google IT Support',
     description:

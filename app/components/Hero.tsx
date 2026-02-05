@@ -4,7 +4,7 @@ import { useIsMobile } from './ui/use-mobile';
 import { useEffect, useState } from 'react';
 import { Tooltip, TooltipTrigger, TooltipContent } from './ui/tooltip';
 import { useNavigate } from 'react-router-dom';
-import CV from '../components/image/CV.pdf'
+import CV from '/My-Portfolio/image/CV.pdf'
 
 export function Hero() {
   const isMobile = useIsMobile();

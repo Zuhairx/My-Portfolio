@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
 import { ImageWithFallback } from './image/ImageWithFallback';
-import profileImg from '../components/image/foto.JPEG'
+import profileImg from '../../public/image/foto.JPEG'
 
 export function About() {
   const ref = useRef(null);
