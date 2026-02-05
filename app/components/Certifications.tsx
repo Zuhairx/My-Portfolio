@@ -6,18 +6,7 @@ import { ImageWithFallback } from './image/ImageWithFallback';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { Dialog, DialogContent } from './ui/dialog';
 import { useNavigate } from 'react-router-dom';
-import img1 from '../components/image/badge/b1.png';
-import ext1 from '../components/image/Certificates/c1.pdf';
-import img2 from '../components/image/badge/b2.png';
-import ext2 from '../components/image/Certificates/c2.jpg';
-import img3 from '../components/image/badge/b3.png';
-import ext3 from '../components/image/Certificates/c3.pdf';
-import img4 from '../components/image/badge/b4.png';
-import ext4 from '../components/image/Certificates/c4.pdf';
-import img5 from '../components/image/badge/b5.png';
-import ext5 from '../components/image/Certificates/c5.pdf';
-import img6 from '../components/image/badge/b6.png';
-import ext6 from '../components/image/Certificates/c6.pdf';
+import { certificationsData } from './certificationsData';
 
 
 
@@ -28,71 +17,7 @@ export function Certifications() {
   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
   const navigate = useNavigate();
 
-  const Certificate = [
-
-    {
-      title: 'Google Prompting Essentials',
-      description:
-        '<strong>Certification ID :</strong> QC1RG2SZELO5 <br> <strong>Obtained Date :</strong> January 16, 2026<br><strong>Issued by :</strong> Google',
-      image: img6,
-      tags: ['Generative AI', 'Prompt Engineering','Multimodal Prompting'],
-      gradient: 'from-orange-400 to-amber-400',
-      externalHref: ext6,
-    },
-
-       {
-      title: 'Google AI Essentials',
-      description:
-        '<strong>Certification ID :</strong> EP3JADT5R7H2 <br> <strong>Obtained Date :</strong> January 14, 2026<br><strong>Issued by :</strong> Google',
-      image: img5,
-      tags: ['Generative AI', 'Machine Learning', 'NLP','LLM'],
-      gradient: 'from-orange-400 to-amber-400',
-      externalHref: ext5,
-    },
-
-    {
-      title: 'Research Paper',
-      description:
-        '<strong>Certification ID :</strong> 002 <br> <strong>Obtained Date :</strong> August 29, 2024<br><strong>Issued by :</strong> ICIMTECH',
-      image: img3,
-      tags: ['Research', 'Publication', 'Data Analysis' ],
-      gradient: 'from-blue-500 to-blue-700',
-      externalHref: ext3,
-    },
-
-     {
-      title: 'Research and Web Development',
-      description:
-        '<strong>Certification ID :</strong> - <br> <strong>Obtained Date :</strong> January 30, 2024<br><strong>Issued by :</strong> Information System Project Member (ISPM)',
-      image: img4,
-      tags: ['Research', 'Web Development' ],
-      gradient: 'from-blue-500 to-blue-700',
-      externalHref: ext4,
-    },
-
-    {
-      title: 'Mendix Rapid Developer',
-      description:
-        '<strong>Certification ID :</strong> 67694 <br> <strong>Obtained Date :</strong> December 22, 2023<br><strong>Issued by :</strong> Mendix',
-      image: img2,
-      tags: ['Microflows', 'Workflows', 'UI Design', 'Data Management' ],
-      gradient: 'from-green-500 to-emerald-500',
-      externalHref: ext2,
-    },
-
-     {
-      title: 'Java Programming',
-      description:
-        '<strong>Certification ID :</strong> 025 <br> <strong>Obtained Date :</strong> September 20, 2022<br><strong>Issued by :</strong> Bina nusantara Computer Club (BNCC)',
-      image: img1,
-      tags: ['Java', 'OOP', 'SQL','Debugging'],
-      gradient: 'from-cyan-500 to-blue-500',
-      externalHref: ext1,
-    },
-
-
-
-  ];
+  const Certificate = certificationsData;
 
   return (
     <section ref={ref} className="py-20 bg-white">
@@ -216,6 +141,32 @@ export function Certifications() {
             </div>
           </div>
         )}
+
+         <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-center mt-12"
+        >
+          <motion.button
+            onClick={() => navigate('/AllCertification')}
+            className="border-2 border-cyan-500 text-cyan-400 bg-transparent  px-8 py-4 rounded-lg transition-all shadow-lg shadow-cyan-500/50"
+            whileHover={{
+              scale: 1.1, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+              backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
+              color: "#ffffff",
+              borderWidth: 0,
+            }}
+            whileTap={{
+              scale: 1.1, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+              backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
+              color: "#ffffff",
+              borderWidth: 0,
+            }}
+          >
+            View All Certifications
+          </motion.button>
+        </motion.div>
 
       </div>
     </section>

@@ -207,7 +207,7 @@ export function Projects() {
           className="text-center mt-12"
         >
           <motion.button
-            onClick={() => navigate('/projects')}
+            onClick={() => navigate('/Allprojects')}
             className="border-2 border-cyan-500 text-cyan-400 bg-transparent  px-8 py-4 rounded-lg transition-all shadow-lg shadow-cyan-500/50"
             whileHover={{
               scale: 1.1, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",

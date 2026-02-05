@@ -1,0 +1,168 @@
+import { motion } from 'motion/react';
+import { useInView } from 'motion/react';
+import { useRef, useState } from 'react';
+import { ExternalLink, ArrowLeft } from 'lucide-react';
+import { ImageWithFallback } from './image/ImageWithFallback';
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
+import { useNavigate } from 'react-router-dom';
+import { certificationsData } from './certificationsData';
+
+export function AllCertifications() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0 });
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
+  const navigate = useNavigate();
+
+ const Certificate = certificationsData;
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-cyan-500/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <motion.button
+              onClick={() => navigate('/')}
+              className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ArrowLeft className="w-5 h-5" />
+              Back to Home
+            </motion.button>
+            <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              All Certifications
+            </h1>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <section ref={ref} className="pt-24 pb-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="text-cyan-500 text-sm tracking-wider uppercase mb-2 block">Portfolio</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl mb-4 text-white">All My Certifications</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto"></div>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+              Explore my complete collection of certifications, showcasing my professional achievements and skills.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {Certificate.map((certificate, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <motion.div
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-gray-700/50 h-full flex flex-col"
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <div className="relative overflow-hidden">
+                    <motion.div
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      <ImageWithFallback
+                        src={certificate.image}
+                        alt={certificate.title}
+                        className="w-full h-64 object-cover"
+                      />
+                    </motion.div>
+
+                    {certificate.externalHref && (
+                      <div className={`absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent transition-opacity duration-300 flex items-end justify-center gap-4 pb-6 ${hoveredIndex === index ? 'opacity-100' : 'opacity-0'}`}>
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <motion.button
+                              onClick={() => setSelectedCertificate(certificate)}
+                              className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-900 hover:bg-cyan-500 hover:text-white transition-colors"
+                              whileHover={{
+                                scale: 1.1, rotate: 5,
+                                backgroundImage: "linear-gradient(to right, #0891b2, #2563eb)",
+                                color: "#ffffff",
+                                borderWidth: 0
+                              }}
+                              whileTap={{ scale: 0.9 }}
+                            >
+                              <ExternalLink className="w-5 h-5" />
+                            </motion.button>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>View Certificate</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="p-6 flex-1 flex flex-col">
+                    <h3 className="text-2xl mb-3 text-white">{certificate.title}</h3>
+                    <p className="text-gray-300 mb-4 flex-1" dangerouslySetInnerHTML={{ __html: certificate.description }}></p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {certificate.tags.map((tag, tagIndex) => (
+                        <motion.span
+                          key={tagIndex}
+                          className={`px-3 py-1 text-sm rounded-full bg-gradient-to-r ${certificate.gradient} text-white`}
+                          whileHover={{ scale: 1.05 }}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                          transition={{ delay: index * 0.1 + tagIndex * 0.05 }}
+                        >
+                          {tag}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {selectedCertificate && (
+        <div className="fixed inset-0 bg-black/30 flex items-center justify-center p-0 m-0 overflow-hidden z-50">
+          <div className="relative w-full h-full flex items-center justify-center flex-col gap-4 text-sm lg:text-base">
+            {selectedCertificate.externalHref.endsWith('.pdf') ? (
+              <iframe
+                src={selectedCertificate.externalHref}
+                className="w-full max-w-4xl h-[90vh]"
+                title={selectedCertificate.title}
+              />
+            ) : (
+              <img
+                src={selectedCertificate.externalHref}
+                alt={selectedCertificate.title}
+                className="max-w-[80%] max-h-[70vh] lg:max-h-[80vh] object-contain"
+              />
+            )}
+            <div className="flex justify-center items-center gap-4">
+              <p className="text-white p-2 bg-black/80 text-center">{selectedCertificate.title}</p>
+            </div>
+            <button
+              onClick={() => setSelectedCertificate(null)}
+              className="absolute top-4 right-4 text-white w-10 h-10 bg-black/50 rounded-full hover:bg-black/80 font-bold"
+              title="Close"
+            >
+              x
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

@@ -14,6 +14,7 @@ import { Toaster } from 'sonner';
 import { setMeta } from './utils/seo';
 
 const AllProjects = lazy(() => import('./components/AllProjects').then((m) => ({ default: m.AllProjects })));
+const AllCertifications = lazy(() => import('./components/AllCertification').then((m) => ({ default: m.AllCertifications })));
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -182,9 +183,14 @@ export default function App() {
                 </motion.section>
               </main>
             } />
-            <Route path="/projects" element={
+            <Route path="/Allprojects" element={
               <Suspense fallback={<div>Loading…</div>}>
                 <AllProjects />
+              </Suspense>
+            } />
+            <Route path="/AllCertification" element={
+              <Suspense fallback={<div>Loading…</div>}>
+                <AllCertifications />
               </Suspense>
             } />
           </Routes>

@@ -1,8 +1,8 @@
-# TODO: Modify Certifications Component for Popup Dialog
+# TODO: Optimize Certifications Data Management
 
-- [x] Add state to track selected certificate: `const [selectedCertificate, setSelectedCertificate] = useState(null);`
-- [x] Replace motion.a with button to set selected certificate on click
-- [x] Add custom full-screen overlay popup to display certificate content (iframe for PDFs, img for images)
-- [x] Style popup like provided HTML: full-screen, dark background, centered content, close button on top-right
-- [x] Make PDF certificates larger in popup (w-full max-w-4xl h-[90vh])
-- [ ] Test popup functionality and close button
+## Tasks
+- [x] Remove all import statements for images and external files in certificationsData.tsx
+- [x] Replace imported variables with string paths to public folder assets
+- [x] Update image and externalHref properties to use '/image/badge/bX.png' and '/image/Certificates/cX.pdf' format
+- [x] Test the changes to ensure images load correctly
+- [x] Verify that adding new certificates is now easier without imports
