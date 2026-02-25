@@ -1,7 +1,18 @@
 
 export const certificationsData = [
 
+   {
+    
+    title: 'Microsoft IT Support Specialist',
+    description:
+      '<strong>Certification ID :</strong> OKX6G4R6SLFI <br> <strong>Obtained Date :</strong> February 25, 2026<br><strong>Issued by :</strong> Microsoft',
+    image: '/My-Portfolio/image/badge/b8.png',
+    tags: ['Cloud Computing', 'Application Security', 'Cybersecurity', 'Desktop Support', 'Microsoft 365'],
+    gradient: 'from-emerald-400 to-green-700',
+    externalHref: '/My-Portfolio/image/Certificates/c8.pdf',
+  },
   {
+    
     title: 'Google IT Support',
     description:
       '<strong>Certification ID :</strong> BZUUU2VWYSO7 <br> <strong>Obtained Date :</strong> February 4, 2026<br><strong>Issued by :</strong> Google',

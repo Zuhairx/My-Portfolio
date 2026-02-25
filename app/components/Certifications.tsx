@@ -14,7 +14,7 @@ export function Certifications() {
   const [selectedCertificate, setSelectedCertificate] = useState<any>(null);
   const navigate = useNavigate();
 
-  const Certificate = certificationsData;
+  const Certificate = certificationsData.slice(0, 6);
 
   return (
     <section ref={ref} className="py-20 bg-white">
